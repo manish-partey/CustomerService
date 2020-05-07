@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
+using System.Web;
 using System.Web.Http;
 using CustomerDAL;
 
@@ -21,17 +22,35 @@ namespace CustomerService.Controllers
 		}
 
 		// GET api/values/5
-		public Customer Get(string id)
+		public HttpResponseMessage Get(string id)
 		{
 			using (NORTHWNDEntities1 objDB = new NORTHWNDEntities1())
 			{
-				return objDB.Customers.FirstOrDefault(e => e.CustomerID == id);
+				var cust = objDB.Customers.FirstOrDefault(e => e.CustomerID == id);
+				if (cust != null)
+					return Request.CreateResponse(HttpStatusCode.OK, cust);
+				return Request.CreateErrorResponse(HttpStatusCode.NotFound, "Customer Not Found");
 			}
 		}
 
 		// POST api/values
-		public void Post([FromBody]string value)
+		public HttpResponseMessage Post([FromBody]Customer customer)
 		{
+			try
+			{ 
+			using (NORTHWNDEntities1 objDB = new NORTHWNDEntities1())
+			{
+				objDB.Customers.Add(customer);
+				objDB.SaveChanges();
+				var message = Request.CreateResponse(HttpStatusCode.Created, customer);
+				message.Headers.Location = new Uri(Request.RequestUri + customer.CustomerID);
+				return message;
+			}
+			}
+			catch(Exception ex)
+			{
+				return Request.CreateErrorResponse(HttpStatusCode.BadRequest, ex);
+			}
 		}
 
 		// PUT api/values/5
