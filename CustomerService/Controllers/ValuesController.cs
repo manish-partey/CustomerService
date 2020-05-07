@@ -59,8 +59,28 @@ namespace CustomerService.Controllers
 		}
 
 		// DELETE api/values/5
-		public void Delete(int id)
+		public HttpResponseMessage Delete(string id)
 		{
+			try
+			{
+				using (NORTHWNDEntities1 objDB = new NORTHWNDEntities1())
+				{
+					var cust = objDB.Customers.FirstOrDefault(e => e.CustomerID == id);
+					if (cust != null)
+					{
+						objDB.Customers.Remove(cust);
+						return Request.CreateResponse(HttpStatusCode.OK);
+					}
+					else
+					{
+						return Request.CreateErrorResponse(HttpStatusCode.NotFound, "Customer Not Found");
+					}
+				}
+			}
+			catch (Exception ex)
+			{
+				return Request.CreateErrorResponse(HttpStatusCode.BadRequest, ex);
+			}
 		}
 	}
 }
