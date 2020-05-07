@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30011.22
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CustomerService", "CustomerService\CustomerService.csproj", "{70D20327-AD8C-44A9-97B0-5989124B2B95}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CustomerDAL", "CustomerDAL\CustomerDAL.csproj", "{FDA5EBA0-939D-4D27-9938-4811520E70E8}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{70D20327-AD8C-44A9-97B0-5989124B2B95}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{70D20327-AD8C-44A9-97B0-5989124B2B95}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{70D20327-AD8C-44A9-97B0-5989124B2B95}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{70D20327-AD8C-44A9-97B0-5989124B2B95}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FDA5EBA0-939D-4D27-9938-4811520E70E8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FDA5EBA0-939D-4D27-9938-4811520E70E8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FDA5EBA0-939D-4D27-9938-4811520E70E8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FDA5EBA0-939D-4D27-9938-4811520E70E8}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {09C6362D-9729-4860-B0B9-059C59A126FF}
+	EndGlobalSection
+EndGlobal

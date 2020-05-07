@@ -1,0 +1,11 @@
+C:\Users\Manish.partey\source\repos\CustomerService\CustomerDAL\bin\Debug\CustomerDAL.dll.config
+C:\Users\Manish.partey\source\repos\CustomerService\CustomerDAL\bin\Debug\CustomerDAL.dll
+C:\Users\Manish.partey\source\repos\CustomerService\CustomerDAL\bin\Debug\CustomerDAL.pdb
+C:\Users\Manish.partey\source\repos\CustomerService\CustomerDAL\bin\Debug\EntityFramework.dll
+C:\Users\Manish.partey\source\repos\CustomerService\CustomerDAL\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Manish.partey\source\repos\CustomerService\CustomerDAL\bin\Debug\EntityFramework.xml
+C:\Users\Manish.partey\source\repos\CustomerService\CustomerDAL\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Manish.partey\source\repos\CustomerService\CustomerDAL\obj\Debug\CustomerDAL.csproj.CoreCompileInputs.cache
+C:\Users\Manish.partey\source\repos\CustomerService\CustomerDAL\obj\Debug\CustomerDAL.csproj.CopyComplete
+C:\Users\Manish.partey\source\repos\CustomerService\CustomerDAL\obj\Debug\CustomerDAL.dll
+C:\Users\Manish.partey\source\repos\CustomerService\CustomerDAL\obj\Debug\CustomerDAL.pdb
