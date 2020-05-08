@@ -54,8 +54,32 @@ namespace CustomerService.Controllers
 		}
 
 		// PUT api/values/5
-		public void Put(int id, [FromBody]string value)
+		public HttpResponseMessage Put(string id, [FromBody]Customer customer)
 		{
+			try
+			{
+				using (NORTHWNDEntities1 objDB = new NORTHWNDEntities1())
+				{
+					var cust = objDB.Customers.FirstOrDefault(e => e.CustomerID == id);
+					if (cust != null)
+					{
+						cust.Address = customer.Address;
+						cust.ContactName = customer.ContactName;
+						cust.CompanyName = customer.CompanyName;
+						objDB.SaveChanges();
+
+						return Request.CreateResponse(HttpStatusCode.OK);
+					}
+					else
+					{
+						return Request.CreateErrorResponse(HttpStatusCode.NotFound, "Customer Not Found");
+					}
+				}
+			}
+			catch (Exception ex)
+			{
+				return Request.CreateErrorResponse(HttpStatusCode.BadRequest, ex);
+			}
 		}
 
 		// DELETE api/values/5
@@ -69,6 +93,7 @@ namespace CustomerService.Controllers
 					if (cust != null)
 					{
 						objDB.Customers.Remove(cust);
+						objDB.SaveChanges();
 						return Request.CreateResponse(HttpStatusCode.OK);
 					}
 					else
